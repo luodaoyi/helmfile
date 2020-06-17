@@ -13,7 +13,7 @@ RUN DPKG_ARCH=$(dpkg --print-architecture); \
     rm sops_${SOPS_VERSION}_amd64.deb
 
 # HELM
-ENV HELM_VERSION v3.0.1
+ENV HELM_VERSION v3.2.3
 RUN wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz; \
     tar -zxvf helm-${HELM_VERSION}-linux-amd64.tar.gz; \
     rm helm-${HELM_VERSION}-linux-amd64.tar.gz; \
@@ -21,7 +21,7 @@ RUN wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz; \
     mv linux-amd64/helm /usr/bin/helm
 
 # HELMFILE
-ENV HELMFILE_VERSION v0.94.1
+ENV HELMFILE_VERSION v0.119.0
 RUN wget -q https://github.com/roboll/helmfile/releases/download/${HELMFILE_VERSION}/helmfile_linux_amd64 -O /usr/bin/helmfile; \
     chmod +x /usr/bin/helmfile
 
